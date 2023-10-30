@@ -17,6 +17,12 @@ The docker network created by `docker-compose` maps pretty well to a multi-tier 
 
 ![](exercises/assets/arch.png)
 
+![image](https://github.com/Ajithkumar10/devsecops-azure-devops-sonarcloud-integration-with-code-coverage/assets/8057634/86378d4d-2296-42c3-9538-e9a682de0339)
+
+![image](https://github.com/Ajithkumar10/devsecops-azure-devops-sonarcloud-integration-with-code-coverage/assets/8057634/f2a6f1b5-5e2f-49d3-b3f6-eee090771c47)
+
+
+
 ## Exercises
 
 * [SQL Injection](exercises/01-sql-injection.md)
