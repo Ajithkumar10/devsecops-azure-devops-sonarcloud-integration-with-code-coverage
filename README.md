@@ -15,7 +15,7 @@ This application and exercises will take you through some of the OWASP top 10 Vu
 
 The docker network created by `docker-compose` maps pretty well to a multi-tier architecture where a web server is publicly available and there are other network resources like a database and internal site that are not publicly available.
 
-![](exercises/assets/arch.png)
+## Azure Pipeline and SonarCloud Screenshots
 
 ![image](https://github.com/Ajithkumar10/devsecops-azure-devops-sonarcloud-integration-with-code-coverage/assets/8057634/86378d4d-2296-42c3-9538-e9a682de0339)
 
