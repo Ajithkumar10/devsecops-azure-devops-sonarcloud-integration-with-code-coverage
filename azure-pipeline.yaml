@@ -15,14 +15,14 @@ stages:
   jobs:
   - job: BuildJob
     steps:
-    - script: echo 'Building the code...'
+    - script: mvn clean package
       displayName: 'Building Azure DevOps App'
 
 - stage: Test
   jobs:
   - job: TestJob
     steps:
-    - script: echo 'Running tests...'
+    - script: mvn clean test
       displayName: 'Testing Azure DevOps App'
 
 - stage: SAST
