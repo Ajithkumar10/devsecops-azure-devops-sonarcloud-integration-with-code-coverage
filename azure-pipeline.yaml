@@ -10,7 +10,25 @@ variables:
 - name: sonar_token
   value: $[variables.SONARTOKEN]
 
-steps:
-- script: |
-    mvn verify package sonar:sonar -Dsonar.host.url=https://sonarcloud.io/ -Dsonar.organization=azuredevopsdevsecopsorg -Dsonar.projectKey=azuredevopsdevsecopsprojectkey -Dsonar.login=$(sonar_token)
-  displayName: "Integrate SAST using SonarCloud to populate code coverage in Azure DevOps DevSecOps Pipeline"
+stages:
+- stage: Build
+  jobs:
+  - job: BuildJob
+    steps:
+    - script: echo 'Building the code...'
+      displayName: 'Building Azure DevOps App'
+
+- stage: Test
+  jobs:
+  - job: TestJob
+    steps:
+    - script: echo 'Running tests...'
+      displayName: 'Testing Azure DevOps App'
+
+- stage: SAST
+  jobs:
+  - job: SASTScan
+    steps:
+    - script: |
+        mvn verify package sonar:sonar -Dsonar.host.url=https://sonarcloud.io/ -Dsonar.organization=azuredevopsdevsecopsorg10 -Dsonar.projectKey=azuredevopsdevsecopsorg10 -Dsonar.login=$(sonar_token)
+      displayName: "SAST Scan Azure DevOps App with Code Coverage"
